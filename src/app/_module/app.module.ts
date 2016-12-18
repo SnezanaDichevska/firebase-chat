@@ -18,6 +18,9 @@ import {AboutComponent} from "../components/about/about.component";
 import {HomeComponent} from "../components/home/home.component";
 import {NoContentComponent} from "../components/no-content/no-content.component";
 import {XLarge} from "../components/home/x-large/x-large.directive";
+import {ChatComponent} from "../components/chat/chat.component";
+import {firebaseConfig} from "./inititalizers/firebase.initializer";
+import {AngularFireModule} from "angularfire2/angularfire2";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -34,20 +37,31 @@ type StoreType = {
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
-@NgModule({
+
+const components:any[] = [
+  AppComponent,
+  AboutComponent,
+  HomeComponent,
+  NoContentComponent,
+  XLarge,
+  ChatComponent
+];
+
+const directives:any[] = [
+
+];
+  @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent,
-    AboutComponent,
-    HomeComponent,
-    NoContentComponent,
-    XLarge
+    components,
+    directives
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

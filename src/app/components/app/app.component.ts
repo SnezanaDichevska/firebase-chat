@@ -40,6 +40,12 @@ import { AppState } from './../../_module/app.service.ts';
           About
         </a>
       </span>
+      |
+       <span>
+        <a [routerLink]=" ['./chat'] ">
+          Chat
+        </a>
+      </span>
     </nav>
 
     <main>
