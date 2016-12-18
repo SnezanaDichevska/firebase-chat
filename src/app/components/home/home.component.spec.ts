@@ -11,8 +11,8 @@ import {
 import { MockBackend } from '@angular/http/testing';
 
 // Load the implementations that should be tested
-import { AppState } from '../app.service';
-import { HomeComponent } from './home.component';
+import { AppState } from '../_module/app.service.ts';
+import { HomeComponent } from './home.component.ts';
 import { Title } from './title';
 
 describe('Home', () => {

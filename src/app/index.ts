@@ -1,2 +1,2 @@
 // App
-export * from './app.module';
+export * from './_module/app.module.ts';

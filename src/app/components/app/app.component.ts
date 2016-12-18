@@ -3,7 +3,7 @@
  */
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { AppState } from './app.service';
+import { AppState } from './../../_module/app.service.ts';
 
 /*
  * App Component
